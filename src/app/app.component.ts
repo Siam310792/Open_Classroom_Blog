@@ -17,14 +17,14 @@ export class AppComponent {
   	created_at : new Date()
   },
   {
-  	title : "Premier post",
-  	content : "Contenu du premier post",
+  	title : "Deuxième post",
+  	content : "Contenu du second post",
   	loveIts : 0,
   	created_at : new Date()
   },
   {
-  	title : "Premier post",
-  	content : "Contenu du premier post",
+  	title : "Troisième post",
+  	content : "Contenu du troisième post",
   	loveIts : 0,
   	created_at : new Date()
   }
@@ -33,5 +33,5 @@ export class AppComponent {
 	constructor() {
 	}
 
-  
+
 }
