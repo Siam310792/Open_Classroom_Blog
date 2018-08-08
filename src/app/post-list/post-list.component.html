@@ -1,0 +1,28 @@
+
+<!-- Par défaut, la classe du <li> est list-group-item, puis fonction de loveIts -->
+<li [ngClass]="{'list-group-item': true,
+			  'list-group-item-success': loveIts > 0,
+			  'list-group-item-danger': loveIts < 0}">
+
+	<!-- une div permettant de display : flex, pour avoir la div et le span de façon horizontale -->
+	<div style="display : flex; justify-content : space-between;">
+		<div>
+			<h3> Titre du post : {{ titlePost }} </h3>
+			<p> {{ contentPost }} </p>
+			<!-- Au clic, méthode onClickLove() -->
+			<!-- Si la variable love est true, le bouton devient devient bleu, sinon il devient vert -->
+			<!-- Si la variable dontLove est true, on disable le bouton LOVE IT -->
+			<button (click)="onClickLove()" 
+					[ngClass]="this.love ? 'btn btn-info' : 'btn btn-success'" 
+					[disabled]="this.dontLove">Love it !!! </button> 
+
+			<!-- Au clic, méthode onClickDontLove() -->
+			<!-- Si la variable dontLove est true, le bouton devient devient bleu, sinon il devient rouge -->
+			<!-- Si la variable love est true, on disable le bouton DON'T LOVE IT -->
+			<button (click)="onClickDontLove()" 
+					[ngClass]="this.dontLove ? 'btn btn-info' : 'btn btn-danger'" 
+					[disabled]="this.love">Don't love !!! </button>
+		</div>
+		<span>{{ createdAt | date : 'medium'}}</span>
+	</div>
+</li>
